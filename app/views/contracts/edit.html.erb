@@ -1,0 +1,61 @@
+<div class="content-wrapper">
+  <section class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <%= link_to 'Буцах', :back, class: 'btn btn-danger' %>
+            </div>
+            <div class="card-body">
+
+              <%= render 'layouts/errors', model: @contract %>
+
+              <%= form_for @contract, url: contract_path(@contract), method: :patch, multipart: true do |f| %>
+                <div class="card-body">
+
+                  <div class="form-group">
+                    <%= f.text_field :number, { class: 'form-control', placeholder: 'Гэрээний дугаар'} %>
+                  </div>
+
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-4">
+                        <%= f.text_field :lastname, { class: 'form-control', placeholder: 'Овог'} %>
+                      </div>
+                      <div class="col-4">
+                        <%= f.text_field :firstname, { class: 'form-control', placeholder: 'Нэр'} %>
+                      </div>
+                      <div class="col-4">
+                        <%= f.text_field :register, { class: 'form-control', placeholder: 'Регистер'} %>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <%= f.text_field :address, { class: 'form-control', placeholder: 'Хаяг'} %>
+                  </div>
+
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="custom-file">
+                        <%= f.file_field :document, class: 'custom-file-input', 
+                            accept: ".doc, .docx,.txt,.pdf" %>
+                        <label class="custom-file-label">Гэрээний файл сонгоно уу</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card-footer">
+                  <%= f.submit 'Засах', class: 'btn btn-primary' %>
+                </div>
+
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

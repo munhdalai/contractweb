@@ -1,0 +1,27 @@
+<div class="content-wrapper">
+  <section class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+
+          <%= render 'layouts/alerts' %>
+
+          <div class="card">
+            <div class="card-header">
+              <%= link_to 'Буцах', :back, class: 'btn btn-danger' %>
+            </div>
+            <div class="card-body">
+              <p><b>Гэрээний дугаар: </b><%= @contract.number %></p>
+              <p><b>Овог: </b><%= @contract.lastname %></p>
+              <p><b>Нэр: </b><%= @contract.firstname %></p>
+              <p><b>Регистер: </b><%= @contract.register %></p>
+              <p><b>Хаяг: </b><%= @contract.address %></p>
+              <br />
+              <%= link_to @contract.document.blob.filename, url_for(@contract.document), target: '_blank' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
