@@ -1,0 +1,55 @@
+<div class="content-wrapper">
+  <section class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+
+          <%= render 'layouts/alerts' %>
+
+          <div class="card">
+            <div class="card-header">
+              <%= link_to 'Нэмэх', new_contract_path, class: 'btn btn-success' %>
+            </div>
+            <div class="card-body">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Гэрээний дугаар</th>
+                    <th>Нэр</th>
+                    <th>Хаяг</th>
+                    <th>Үйлдэл</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% @contracts.each do |contract| %>
+                    <tr>
+                      <td><%= contract.number %></td>
+                      <td><%= contract.firstname %> <%= contract.lastname %></td>
+                      <td><%= contract.address %></td>
+                      <td>
+                        <%= link_to contract_path(contract), class: 'btn btn-primary btn-sm text-white' do %>
+                          <i class="fa fa-eye"></i>
+                        <% end %>
+
+                        <%= link_to edit_contract_path(contract), class: 'btn btn-warning btn-sm text-white' do %>
+                          <i class="fa fa-pencil"></i>
+                        <% end %>
+
+                        <%= link_to contract_path(contract), class: 'btn btn-danger btn-sm text-white', method: :delete,  data: { confirm: 'Are you sure?'}, rel: 'nofollow' do %>
+                          <i class="fa fa-trash-o"></i>
+                        <% end %>
+                      </td>
+                    </tr>
+                    <% end %>
+                  </tbody>
+                </table>
+              </div>
+              <div class="card-footer clearfix">
+                <%= paginate @contracts %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>

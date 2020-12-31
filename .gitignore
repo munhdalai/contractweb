@@ -36,3 +36,8 @@ yarn-debug.log*
 .yarn-integrity
 
 /config/application.yml
+/public/fonts
+/public/test_documents
+/public/pdfjs
+
+/test/
