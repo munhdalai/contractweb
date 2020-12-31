@@ -31,3 +31,18 @@
 
 en:
   hello: "Hello world"
+
+  activerecord:
+    attributes:
+      contract:
+        number: Гэрээний дугаар
+        lastname: Овог
+        firstname: Нэр
+        address: Хаяг
+        register: Регистер
+  
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      blank: бөглөнө үү
+      invalid: буруу байна
